@@ -1,0 +1,30 @@
+:root {
+  /* Palette – quiet luxury */
+  --bg: #FAFAF8;            /* page background (off-white) */
+  --card: #FFFFFF;          /* surfaces/cards */
+  --text: #1F2937;          /* primary ink (charcoal) */
+  --muted: #667085;         /* secondary text */
+  --brand: #0B2C3D;         /* deep finance navy/teal */
+  --brand-2: #C9A227;       /* soft gilt accent (gold) */
+  --border: #E7E7EA;        /* subtle divider */
+  --radius: 14px;
+  --gap: 24px;
+  --nav-h: 64px;
+
+  /* Shadows tuned for light surfaces */
+  --shadow-sm: 0 2px 10px rgba(17, 24, 39, 0.06);
+  --shadow-md: 0 6px 20px rgba(17, 24, 39, 0.08);
+}
+
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; background: var(--bg); color: var(--text); }
+body {
+  font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+main { min-height: calc(100vh - var(--nav-h) - 200px); }
+
+.container { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 16px; }
+
+button, input, textarea, select { font: inherit; }
+a { color: inherit; text-decoration: none; }

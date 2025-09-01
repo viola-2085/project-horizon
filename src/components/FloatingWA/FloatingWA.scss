@@ -1,0 +1,35 @@
+.floating-whatsapp-container {
+  position: fixed;
+  right: 25px; /* Aligns the button to the right */
+  bottom: 52px; /* Distance from the bottom */
+  z-index: 9999; /* Ensures it's on top of other elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-whatsapp-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25d366; /* WhatsApp green */
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 10px rgba(37, 211, 102, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.floating-whatsapp-button:hover {
+  background-color: #128c7e; /* Darker WhatsApp green */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 15px rgba(18, 140, 126, 0.7);
+}
+
+.floating-whatsapp-button svg {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+}

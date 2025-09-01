@@ -1,0 +1,43 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 100; /* above your site header */
+  background: #EA7A1A; /* refined orange */
+  color: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  gap: 12px;
+}
+
+.note {
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(217, 98, 98, 0.18);
+  border: 1px solid rgba(255,255,255,0.28);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background: rgba(255,255,255,0.26);
+}

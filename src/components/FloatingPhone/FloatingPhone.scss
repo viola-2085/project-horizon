@@ -1,0 +1,35 @@
+.floating-phone-container {
+  position: fixed;
+  left: 25px;
+  bottom: 52px;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-phone-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #28a745;
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 10px rgba(40, 167, 69, 0.5);
+  pointer-events: auto;
+}
+
+.floating-phone-button:hover {
+  background-color: #218838;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 15px rgba(40, 167, 69, 0.7);
+}
+
+.floating-phone-button svg {
+  pointer-events: none;
+  width: 24px;
+  height: 24px;
+}

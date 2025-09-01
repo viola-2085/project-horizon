@@ -1,0 +1,12 @@
+.footer {
+  margin-top: 64px;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  background: #F5F6F7;
+}
+.grid { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+.brand { font-weight: 600; margin-bottom: 6px; color: var(--text); }
+.links { display: flex; gap: 16px; }
+.links a { color: var(--muted); }
+.links a:hover { color: var(--text); }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }

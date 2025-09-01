@@ -1,0 +1,43 @@
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: calc(var(--nav-h) + 16px);
+}
+.title { margin: 4px 0 12px; font-size: 18px; }
+.form { display: grid; grid-template-columns: 1fr; gap: 10px; }
+
+.form :where(input, select, textarea) {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  padding: 10px 12px;
+}
+.form :where(input, select, textarea):focus {
+  outline: none;
+  border-color: color-mix(in oklab, var(--brand) 30%, var(--border));
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 15%, #ffffff);
+}
+
+.form button {
+  /* understated CTA: deep navy with gentle hover */
+  background: var(--brand);
+  color: #FFFFFF;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.form button:hover { filter: brightness(1.03); }
+.form button:disabled { opacity: .6; cursor: default; }
+
+.note { color: var(--muted); }
+.ok { color: #198754; }   /* discreet success */
+.err { color: #B42318; }  /* discreet error */

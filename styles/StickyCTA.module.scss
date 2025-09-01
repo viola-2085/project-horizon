@@ -1,0 +1,17 @@
+.bar {
+  position: fixed;
+  bottom: 12px; left: 0; right: 0;
+  display: none; /* desktop hidden */
+  justify-content: center;
+  z-index: 60;
+}
+.bar button {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--brand);
+  color: #FFFFFF; font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+.bar button:hover { filter: brightness(1.03); }
+@media (max-width: 900px) { .bar { display: flex; } }
