@@ -71,7 +71,7 @@ export default function Page() {
             <div className={styles.galleryGrid} role="list">
               <figure role="listitem">
                 <Image
-                    src="/images/fireside-chat.jpg"
+                    src="/images/miquel-parera-PuDezGdk8u4-unsplash.jpg"
                     alt="Fireside discussion on private credit"
                     width={900}
                     height={560}
@@ -82,7 +82,7 @@ export default function Page() {
 
               <figure role="listitem">
                 <Image
-                    src="/images/networking.jpg"
+                    src="/images/miquel-parera-PuDezGdk8u4-unsplash.jpg"
                     alt="Networking between sessions"
                     width={900}
                     height={560}

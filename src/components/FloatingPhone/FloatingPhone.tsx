@@ -5,7 +5,7 @@ import './FloatingPhone.scss';
 const FloatingPhoneButton: React.FC = () => {
     return (
         <div className="floating-phone-container">
-            <a href="tel:07447075911" className="floating-phone-button" aria-label="Call us" rel="noopener noreferrer">
+            <a href="tel:02033750400" className="floating-phone-button" aria-label="Call us" rel="noopener noreferrer">
                 <FaPhoneAlt />
             </a>
         </div>

@@ -8,7 +8,7 @@ const FloatingWhatsAppButton: React.FC = () => {
     return (
         <div className="floating-whatsapp-container">
             <a
-                href="https://wa.me/+447447075911?text=Hello!%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                href="https://wa.me/02033750400?text=Hello!%20I%20would%20like%20to%20attend%20the%20event."
                 className="floating-whatsapp-button"
                 target="_blank"
                 rel="noopener noreferrer"
