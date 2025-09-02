@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 
-
+import 'aos/dist/aos.css';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import PreviewBar from '@/components/PreviewBar/PreviewBar';

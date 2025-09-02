@@ -10,7 +10,8 @@ import AOSProvider from '../../components/AOSProvider/AOSProvider';
 
 export default function Page() {
   return (
-      <>
+      <AOSProvider>
+        <>
         <section className={styles.hero}>
           <div className={styles.media} aria-hidden="true">
             <Image
@@ -32,14 +33,14 @@ export default function Page() {
                   <span>Property Credit · Income · Risk & Governance</span>
                 </h1>
                 <p data-aos="fade-up" data-aos-delay="100">
-                  A focused half-day for sophisticated investors. Pragmatic views on secured
+                  A focused evening for sophisticated investors. Pragmatic views on secured
                   lending, inflation-linked income, and disciplined underwriting—
                   with transparent discussion under the Chatham House Rule.
                 </p>
                 <ul className={styles.bullets}>
-                  <li data-aos="fade-up" data-aos-delay="150">Macro & credit outlook for H2/H3</li>
-                  <li data-aos="fade-up" data-aos-delay="220">Due diligence, risk controls & reporting</li>
-                  <li data-aos="fade-up" data-aos-delay="290">Case studies from active managers</li>
+                  <li data-aos="fade-up" data-aos-delay="150">A Private Tour of an Exclusive Art Collection</li>
+                  <li data-aos="fade-up" data-aos-delay="220">A Keynote from our Executive Chairman</li>
+                  <li data-aos="fade-up" data-aos-delay="290">Connect with Fellow Guests</li>
                 </ul>
               </div>
 
@@ -69,6 +70,7 @@ export default function Page() {
           </div>
         </section>
 
+          <div data-aos="fade-right" data-aos-delay="500">
         <ContentImgLeft
             image={LeftImg}
             imageAlt="Minimal portrait"
@@ -87,7 +89,9 @@ export default function Page() {
             Limited places. Event specifics to follow.
           </p>
         </ContentImgLeft>
+          </div>
 
+          <div data-aos="fade-left" data-aos-delay="500">
         <ContentImgLeft
             image={RightImg}
             imageAlt="Minimal portrait"
@@ -106,7 +110,9 @@ export default function Page() {
             A short Q&A will follow to explore themes most relevant to you.
           </p>
         </ContentImgLeft>
+        </div>
 
+          <div data-aos="fade-right" data-aos-delay="500">
         <ContentImgLeft
             image={LastImg}
             imageAlt="Minimal portrait"
@@ -125,49 +131,49 @@ export default function Page() {
             No hard sell—just good company and useful conversations.
           </p>
         </ContentImgLeft>
+          </div>s
+        {/*<section className={styles.gallery}>*/}
+        {/*  <div className="container">*/}
+        {/*    <div className={styles.galleryGrid} role="list">*/}
+        {/*      <figure role="listitem">*/}
+        {/*        <Image*/}
+        {/*            src="/images/miquel-parera-PuDezGdk8u4-unsplash.jpg"*/}
+        {/*            alt="Fireside discussion on private credit"*/}
+        {/*            width={900}*/}
+        {/*            height={560}*/}
+        {/*            sizes="(min-width: 900px) 33vw, 100vw"*/}
+        {/*        />*/}
+        {/*        <figcaption>Panel: disciplined underwriting & covenants</figcaption>*/}
+        {/*      </figure>*/}
 
-        <section className={styles.gallery}>
-          <div className="container">
-            <div className={styles.galleryGrid} role="list">
-              <figure role="listitem">
-                <Image
-                    src="/images/miquel-parera-PuDezGdk8u4-unsplash.jpg"
-                    alt="Fireside discussion on private credit"
-                    width={900}
-                    height={560}
-                    sizes="(min-width: 900px) 33vw, 100vw"
-                />
-                <figcaption>Panel: disciplined underwriting & covenants</figcaption>
-              </figure>
+        {/*      <figure role="listitem">*/}
+        {/*        <Image*/}
+        {/*            src="/images/miquel-parera-PuDezGdk8u4-unsplash.jpg"*/}
+        {/*            alt="Networking between sessions"*/}
+        {/*            width={900}*/}
+        {/*            height={560}*/}
+        {/*            sizes="(min-width: 900px) 33vw, 100vw"*/}
+        {/*        />*/}
+        {/*        <figcaption>Connections with managers and peers</figcaption>*/}
+        {/*      </figure>*/}
 
-              <figure role="listitem">
-                <Image
-                    src="/images/miquel-parera-PuDezGdk8u4-unsplash.jpg"
-                    alt="Networking between sessions"
-                    width={900}
-                    height={560}
-                    sizes="(min-width: 900px) 33vw, 100vw"
-                />
-                <figcaption>Connections with managers and peers</figcaption>
-              </figure>
-
-              <figure role="listitem">
-                <Image
-                    src="/images/miquel-parera-PuDezGdk8u4-unsplash.jpg"
-                    alt="Calm, elegant venue"
-                    width={900}
-                    height={560}
-                    sizes="(min-width: 900px) 33vw, 100vw"
-                />
-                <figcaption>Calm setting, quiet conversations</figcaption>
-              </figure>
-            </div>
-          </div>
-        </section>
+        {/*      <figure role="listitem">*/}
+        {/*        <Image*/}
+        {/*            src="/images/miquel-parera-PuDezGdk8u4-unsplash.jpg"*/}
+        {/*            alt="Calm, elegant venue"*/}
+        {/*            width={900}*/}
+        {/*            height={560}*/}
+        {/*            sizes="(min-width: 900px) 33vw, 100vw"*/}
+        {/*        />*/}
+        {/*        <figcaption>Calm setting, quiet conversations</figcaption>*/}
+        {/*      </figure>*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</section>*/}
 
         <section id="agenda" className={styles.agenda}>
           <div className="container">
-            <h2>Programme</h2>
+            <h2>Agenda</h2>
             <div className={styles.timeline}>
               <div><strong>08:30</strong> Arrival & coffee</div>
               <div><strong>09:00</strong> Outlook: rates, spreads, and real assets</div>
@@ -179,6 +185,7 @@ export default function Page() {
 
         <StickyCTA />
       </>
+      </AOSProvider>
   );
 }
 
