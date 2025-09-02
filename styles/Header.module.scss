@@ -1,6 +1,6 @@
 .header {
   position: sticky;
-  top: var(--preview-h, 0);  /* was: top: 0; */
+  top: var(--preview-h, 0);
   z-index: 50;
   background: rgba(255,255,255,0.8);
   backdrop-filter: blur(8px);
@@ -11,6 +11,22 @@
 }
 
 .row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand {
+  --logo-h: 28px;
+}
+
+.logo {
+  height: var(--logo-h);
+  width: auto;
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .brand { --logo-h: 34px; }
+}
+
+.logo { max-width: 240px; }
+
 .brand { font-weight: 600; letter-spacing: .2px; color: var(--text); }
 .nav { display: flex; align-items: center; gap: 18px; }
 .nav a { color: var(--muted); }

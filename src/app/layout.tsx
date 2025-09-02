@@ -37,7 +37,6 @@ export default function RootLayout({
       <PreviewBar />
         <Header />
         {children}
-      <FloatingWA />
       <FloatingPhone />
               <Footer />
       </body>

@@ -71,7 +71,7 @@ export default function Page() {
         <ContentImgLeft
             image={LeftImg}
             imageAlt="Minimal portrait"
-            eyebrow="Art, up close."
+            eyebrow="Art, up close"
             title="A Private Tour of an Exclusive Art Collection"
             ctaLabel="Sign up now"
             ctaHref="#"
@@ -90,7 +90,7 @@ export default function Page() {
         <ContentImgLeft
             image={RightImg}
             imageAlt="Minimal portrait"
-            eyebrow="Perspective you can act on."
+            eyebrow="Perspective you can act on"
             title="A Keynote from our Executive Chairman"
             ctaLabel="Sign up now"
             ctaHref="#"
@@ -109,7 +109,7 @@ export default function Page() {
         <ContentImgLeft
             image={LastImg}
             imageAlt="Minimal portrait"
-            eyebrow="Conversations worth having."
+            eyebrow="Conversations worth having"
             title="Connect with Fellow Guests"
             ctaLabel="Sign up now"
             ctaHref="#"
