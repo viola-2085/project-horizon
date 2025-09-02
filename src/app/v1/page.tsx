@@ -2,12 +2,15 @@ import Image from 'next/image';
 import styles from '../../../styles/v1.module.scss';
 import SignupForm from '@/components/SignupForm';
 import StickyCTA from '@/components/StickyCTA';
+import ContentImgLeft from '@/components/ContentImgLeft/ContentImgLeft';
+import LeftImg from '../../../public/images/img.png';
+import RightImg from '../../../public/images/grow-capital.png';
+import LastImg from '../../../public/images/connect.png';
 
 export default function Page() {
   return (
       <>
         <section className={styles.hero}>
-          {/* Background hero image */}
           <div className={styles.media} aria-hidden="true">
             <Image
                 src="/images/miquel-parera-PuDezGdk8u4-unsplash.jpg"
@@ -24,7 +27,7 @@ export default function Page() {
             <div className={styles.grid}>
               <div className={styles.copy}>
                 <h1>
-                  Private Markets Briefing 2025
+                  The Art of Growing Capital
                   <span>Property Credit · Income · Risk & Governance</span>
                 </h1>
                 <p>
@@ -65,7 +68,63 @@ export default function Page() {
           </div>
         </section>
 
-        {/* Discreet image gallery */}
+        <ContentImgLeft
+            image={LeftImg}
+            imageAlt="Minimal portrait"
+            eyebrow="Art, up close."
+            title="A Private Tour of an Exclusive Art Collection"
+            ctaLabel="Sign up now"
+            ctaHref="#"
+            align="left"
+            indent="56px"
+            maxWidth="1200px"
+        >
+          <p>
+            An intimate, guided walk-through of a seldom-seen collection—how pieces live, age and are looked after in a working space. Unhurried, conversational, and designed for close looking.
+          </p>
+          <p>
+            Limited places. Event specifics to follow.
+          </p>
+        </ContentImgLeft>
+
+        <ContentImgLeft
+            image={RightImg}
+            imageAlt="Minimal portrait"
+            eyebrow="Perspective you can act on."
+            title="A Keynote from our Executive Chairman"
+            ctaLabel="Sign up now"
+            ctaHref="#"
+            align="right"
+            indent="56px"
+            maxWidth="1200px"
+        >
+          <p>
+            Hear our Executive Chairman reflect on the year’s inflection points and what they mean for disciplined investors. From the cost of capital to risk and opportunity, he’ll outline the principles shaping our approach and the areas we’re watching next.
+          </p>
+          <p>
+            A short Q&A will follow to explore themes most relevant to you.
+          </p>
+        </ContentImgLeft>
+
+        <ContentImgLeft
+            image={LastImg}
+            imageAlt="Minimal portrait"
+            eyebrow="Conversations worth having."
+            title="Connect with Fellow Guests"
+            ctaLabel="Sign up now"
+            ctaHref="#"
+            align="left"
+            indent="56px"
+            maxWidth="1200px"
+        >
+          <p>
+            Meet peers from finance, property and the arts in a relaxed setting designed for genuine connection. Swap ideas, compare notes and build new relationships over drinks and light refreshments.
+          </p>
+          <p>
+            No hard sell—just good company and useful conversations.
+          </p>
+        </ContentImgLeft>
+
         <section className={styles.gallery}>
           <div className="container">
             <div className={styles.galleryGrid} role="list">
@@ -93,7 +152,7 @@ export default function Page() {
 
               <figure role="listitem">
                 <Image
-                    src="/images/venue-detail.jpg"
+                    src="/images/miquel-parera-PuDezGdk8u4-unsplash.jpg"
                     alt="Calm, elegant venue"
                     width={900}
                     height={560}
