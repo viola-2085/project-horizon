@@ -19,6 +19,9 @@ type Props = {
     className?: string;
 };
 
+type CSSVarKeys = '--indent' | '--maxw';
+type CSSVars = Partial<Record<CSSVarKeys, string>>;
+
 export default function ContentImgLeft({
                                              image,
                                              imageAlt,
@@ -41,9 +44,9 @@ export default function ContentImgLeft({
         .filter(Boolean)
         .join(' ');
 
-    const styleVars = {
-        ['--indent' as any]: indent ?? 'clamp(16px, 5vw, 64px)',
-        ['--maxw' as any]: maxWidth ?? '1200px',
+    const styleVars: React.CSSProperties & CSSVars = {
+        '--indent': indent ?? 'clamp(16px, 5vw, 64px)',
+        '--maxw': maxWidth ?? '1200px',
     };
 
     return (

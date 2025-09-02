@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import PreviewBar from '@/components/PreviewBar/PreviewBar';
-import FloatingWA from '@/components/FloatingWA/FloatingWA';
 import FloatingPhone from '@/components/FloatingPhone/FloatingPhone';
 import './globals.scss';
 import { Geist, Geist_Mono } from "next/font/google";

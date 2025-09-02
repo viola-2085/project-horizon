@@ -6,6 +6,7 @@ import ContentImgLeft from '@/components/ContentImgLeft/ContentImgLeft';
 import LeftImg from '../../../public/images/img.png';
 import RightImg from '../../../public/images/grow-capital.png';
 import LastImg from '../../../public/images/connect.png';
+import AOSProvider from '../../components/AOSProvider/AOSProvider';
 
 export default function Page() {
   return (
@@ -26,19 +27,19 @@ export default function Page() {
           <div className="container">
             <div className={styles.grid}>
               <div className={styles.copy}>
-                <h1>
+                <h1 data-aos="fade-up">
                   The Art of Growing Capital
                   <span>Property Credit · Income · Risk & Governance</span>
                 </h1>
-                <p>
+                <p data-aos="fade-up" data-aos-delay="100">
                   A focused half-day for sophisticated investors. Pragmatic views on secured
                   lending, inflation-linked income, and disciplined underwriting—
                   with transparent discussion under the Chatham House Rule.
                 </p>
                 <ul className={styles.bullets}>
-                  <li>Macro & credit outlook for H2/H3</li>
-                  <li>Due diligence, risk controls & reporting</li>
-                  <li>Case studies from active managers</li>
+                  <li data-aos="fade-up" data-aos-delay="150">Macro & credit outlook for H2/H3</li>
+                  <li data-aos="fade-up" data-aos-delay="220">Due diligence, risk controls & reporting</li>
+                  <li data-aos="fade-up" data-aos-delay="290">Case studies from active managers</li>
                 </ul>
               </div>
 
