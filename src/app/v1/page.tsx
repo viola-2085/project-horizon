@@ -8,7 +8,6 @@ import RightImg from '../../../public/images/grow-capital.png';
 import LastImg from '../../../public/images/connect.png';
 import AOSProvider from '../../components/AOSProvider/AOSProvider';
 import SaveTheDate from '../../components/SaveTheDate/SaveTheDate';
-import poster from '../../../public/images/img.png';
 
 export default function Page() {
   return (
