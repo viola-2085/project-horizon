@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 
-function pad(n: number) { return String(n).padStart(2, '0'); }
 function toLocalParts(dateISO: string, timeZone: string) {
     const d = new Date(dateISO);
     const p = new Intl.DateTimeFormat('en-GB', {
@@ -15,25 +14,28 @@ function toLocalParts(dateISO: string, timeZone: string) {
         hh: get('hour'), mi: get('minute'), ss: get('second'),
     };
 }
+
 function icsLocalStamp(iso: string, tz: string) {
     const { y, m, d, hh, mi, ss } = toLocalParts(iso, tz);
     return `${y}${m}${d}T${hh}${mi}${ss}`;
 }
+
 function fmtUTC(d: Date) {
     return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
 }
+
 function escapeICS(text: string) {
     return text.replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\r?\n/g,'\\n');
 }
 
 export async function GET(request: Request) {
     const url = new URL(request.url);
-    const title   = url.searchParams.get('title')   || 'Event';
-    const details = url.searchParams.get('details') || '';
-    const location= url.searchParams.get('location')|| '';
-    const start   = url.searchParams.get('start')   || '';
-    const end     = url.searchParams.get('end')     || '';
-    const tz      = url.searchParams.get('tz')      || 'Europe/London';
+    const title    = url.searchParams.get('title')    || 'Event';
+    const details  = url.searchParams.get('details')  || '';
+    const location = url.searchParams.get('location') || '';
+    const start    = url.searchParams.get('start')    || '';
+    const end      = url.searchParams.get('end')      || '';
+    const tz       = url.searchParams.get('tz')       || 'Europe/London';
 
     if (!start || !end) {
         return new NextResponse('Missing start/end', { status: 400 });
@@ -45,7 +47,7 @@ export async function GET(request: Request) {
     const VTIMEZONE = [
         'BEGIN:VTIMEZONE',
         `TZID:${tz}`,
-        'X-LIC-LOCATION:Europe/London',
+        `X-LIC-LOCATION:${tz}`,
         'BEGIN:DAYLIGHT',
         'TZOFFSETFROM:+0000',
         'TZOFFSETTO:+0100',

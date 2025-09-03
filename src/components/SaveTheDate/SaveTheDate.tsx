@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback } from 'react';
+import React from 'react';
 
 type Props = {
     title: string;
@@ -28,17 +28,11 @@ export default function SaveTheDate({
     const isNonEmpty = (v: unknown): v is string =>
         typeof v === 'string' && v.trim().length > 0;
 
+    const invalid = !isNonEmpty(startLocalISO) || !isNonEmpty(endLocalISO);
+
     const fmtGoogle = (iso: string) => (isNonEmpty(iso) ? iso.replace(/[-:]/g, '').slice(0, 15) : '');
 
     const q = (s: string) => encodeURIComponent(s);
-
-    if (!isNonEmpty(startLocalISO) || !isNonEmpty(endLocalISO)) {
-        if (process.env.NODE_ENV !== 'production') {
-            // eslint-disable-next-line no-console
-            console.warn('[SaveTheDate] startLocalISO/endLocalISO missing or empty — button not rendered.');
-        }
-        return null;
-    }
 
     const urls = {
         google:
@@ -60,7 +54,7 @@ export default function SaveTheDate({
             `&start=${q(startLocalISO)}&end=${q(endLocalISO)}&tz=${q(timeZone)}`,
     };
 
-    const pickUrl = useCallback(() => {
+    function pickUrl() {
         const ua = (typeof navigator !== 'undefined' ? navigator.userAgent : '').toLowerCase();
         const isIOS = /iphone|ipad|ipod/.test(ua);
         const isMac = /macintosh/.test(ua);
@@ -73,16 +67,25 @@ export default function SaveTheDate({
         if (isWindows || isEdge) return urls.outlookOffice;
         if (isAndroid) return urls.google;
         return urls.google;
-    }, [urls]);
+    }
 
-    const onClick = () => {
+    function onClick() {
+        if (invalid) return;
         const url = pickUrl();
         if (!url) return;
         window.open(url, '_blank', 'noopener,noreferrer');
-    };
+    }
 
     return (
-        <button type="button" className={className} onClick={onClick} aria-label={label}>
+        <button
+            type="button"
+            className={className}
+            onClick={onClick}
+            aria-label={label}
+            disabled={invalid}
+            aria-disabled={invalid ? 'true' : undefined}
+            title={invalid ? 'Date/time not set' : undefined}
+        >
             {label}
         </button>
     );
