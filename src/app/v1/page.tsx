@@ -7,6 +7,8 @@ import LeftImg from '../../../public/images/img.png';
 import RightImg from '../../../public/images/grow-capital.png';
 import LastImg from '../../../public/images/connect.png';
 import AOSProvider from '../../components/AOSProvider/AOSProvider';
+import SaveTheDate from '../../components/SaveTheDate/SaveTheDate';
+import poster from '../../../public/images/img.png';
 
 export default function Page() {
   return (
@@ -42,6 +44,14 @@ export default function Page() {
                   <li data-aos="fade-up" data-aos-delay="220">A Keynote from our Executive Chairman</li>
                   <li data-aos="fade-up" data-aos-delay="290">Connect with Fellow Guests</li>
                 </ul>
+                  <SaveTheDate
+                      className={styles.addCalBtn}
+                      title="The Art of Growing Capital"
+                      details="Please save the date — full details to follow."
+                      location="London"
+                      startLocalISO="2025-10-16T18:30:00"
+                      endLocalISO="2025-10-16T20:30:00"
+                  />
               </div>
 
               <div className={styles.formCol}>

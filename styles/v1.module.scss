@@ -1,24 +1,22 @@
 .hero {
   position: relative;
-  z-index: 0;                 /* create a stacking context */
+  z-index: 0;
   padding: 72px 0 32px;
   background: linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%);
   overflow: clip;
 }
 
-/* Background image layer */
 .media {
   position: absolute;
   inset: 0;
-  z-index: 0;                 /* lowest layer */
-  pointer-events: none;       /* image never captures clicks */
+  z-index: 0;
+  pointer-events: none;
 }
 
-/* Soft wash over the photo for legibility */
 .overlay {
   position: absolute;
   inset: 0;
-  z-index: 1;                 /* above image, below content */
+  z-index: 1;
   pointer-events: none;
   background: linear-gradient(
                   180deg,
@@ -28,10 +26,9 @@
   );
 }
 
-/* Content grid must sit above both layers */
 .grid {
   position: relative;
-  z-index: 2;                 /* top layer */
+  z-index: 2;
   display: grid;
   grid-template-columns: 1.2fr .8fr;
   gap: 28px;
@@ -41,7 +38,7 @@
 
 .grid {
   position: relative;
-  z-index: 2; /* above media/overlay */
+  z-index: 2;
   display: grid;
   grid-template-columns: 1.2fr .8fr;
   gap: 28px;
@@ -111,4 +108,95 @@
   .formCol { position: relative; top: 0; }
   .kards { grid-template-columns: 1fr; }
   .galleryGrid { grid-template-columns: 1fr; }
+}
+
+
+.addCalBtn {
+  --btn-fg: currentColor;
+  --btn-bg: transparent;
+  --btn-border: color-mix(in srgb, currentColor 35%, transparent);
+  --btn-bg-hover: color-mix(in srgb, currentColor 8%, transparent);
+  --btn-bg-active: color-mix(in srgb, currentColor 12%, transparent);
+  --btn-ring: rgba(0, 0, 0, 0.18);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 18px;
+  padding: 11px 18px;
+
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-border);
+  border-radius: 9999px;
+
+  font: inherit;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  line-height: 1;
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: transform 160ms ease, background-color 160ms ease, opacity 160ms ease, border-color 160ms ease;
+}
+
+@supports not (color: color-mix(in srgb, black, white)) {
+  .addCalBtn {
+    --btn-border: rgba(0, 0, 0, 0.25);
+    --btn-bg-hover: rgba(0, 0, 0, 0.05);
+    --btn-bg-active: rgba(0, 0, 0, 0.08);
+  }
+}
+
+.addCalBtn::before {
+  content: '';
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  flex: 0 0 1em;
+  -webkit-mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3crect x='3' y='4' width='18' height='18' rx='2'/%3e%3cline x1='16' y1='2' x2='16' y2='6'/%3e%3cline x1='8' y1='2' x2='8' y2='6'/%3e%3cline x1='3' y1='10' x2='21' y2='10'/%3e%3c/svg%3e") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3crect x='3' y='4' width='18' height='18' rx='2'/%3e%3cline x1='16' y1='2' x2='16' y2='6'/%3e%3cline x1='8' y1='2' x2='8' y2='6'/%3e%3cline x1='3' y1='10' x2='21' y2='10'/%3e%3c/svg%3e") center / contain no-repeat;
+  background: currentColor;
+  margin-right: 2px;
+}
+
+.addCalBtn:hover { background: var(--btn-bg-hover); transform: translateY(-1px); }
+.addCalBtn:active { background: var(--btn-bg-active); transform: translateY(0); }
+.addCalBtn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-ring);
+  transform: translateY(-1px);
+}
+
+.addCalBtn:disabled,
+.addCalBtn[aria-disabled='true'] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.addCalBtnSolid {
+  --btn-bg: currentColor;
+  --btn-fg: var(--btn-on, #fff);
+  --btn-border: currentColor;
+  --btn-ring: rgba(0, 0, 0, 0.25);
+
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border-color: var(--btn-border);
+}
+.addCalBtnSolid:hover   { opacity: 0.95; transform: translateY(-1px); }
+.addCalBtnSolid:active  { opacity: 0.9;  transform: translateY(0); }
+
+@media (prefers-color-scheme: dark) {
+  .addCalBtn {
+    --btn-ring: rgba(255, 255, 255, 0.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .addCalBtn { transition: none; transform: none !important; }
 }
